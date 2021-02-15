@@ -16,7 +16,8 @@ class Car {
         this._price = newPrice
     }
     turnOn() { this.isOn = true }
-    turnOff() { this.isOn = false }
+    // turnOff() { this.isOn = false }
+    turnOff() { if (this.isOn = false) { this.speed = 0; } }
     accelerate(value) {
         this.speed = value;
         if(this.speed + value >= this.maxSpeed) {
@@ -24,9 +25,8 @@ class Car {
         }
     }
     decelerate(value) {
-        this.speed = value;
-        if(this.speed - value >= 0) {
-            this.speed = this.speed - value;
+        if(this.maxSpeed - value >= 0) {
+            this.speed = this.maxSpeed - this.speed - value;
         }
     }
     drive(hours) {
